@@ -1,7 +1,7 @@
 import './About.css'
 
 const STATS = [
-  { value: '36', label: 'Projects Built', icon: 'code' },
+  { value: '38', label: 'Projects Built', icon: 'code' },
   { value: '3 mo', label: 'Internship Experience', icon: 'calendar' },
   { value: '6', label: 'Certifications', icon: 'award' },
   { value: '114', label: 'Unit Tests Written', icon: 'check' },
