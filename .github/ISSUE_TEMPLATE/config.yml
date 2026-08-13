@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/adarsh0707-kumar/portfolio/security/advisories/new
+    about: Please report security problems privately, never as a public issue.
+  - name: Get in touch
+    url: mailto:adarshku.official@gmail.com
+    about: Hiring, freelance work, or anything not about the code.

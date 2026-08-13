@@ -1,0 +1,51 @@
+name: Accessibility issue
+description: Something on the site is hard or impossible to use
+title: "[A11y]: "
+labels: ["accessibility"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        These reports are especially welcome — I cannot test every assistive
+        technology myself.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is the barrier?
+      placeholder: The violet project tags fail contrast against the card background at small sizes.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Color contrast
+        - Keyboard navigation
+        - Screen reader
+        - Focus management
+        - Motion or animation
+        - Text sizing / zoom
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: tooling
+    attributes:
+      label: Assistive technology or tool
+      description: If applicable — screen reader, browser extension, audit tool
+      placeholder: "NVDA 2024.1 on Firefox / axe DevTools"
+    validations:
+      required: false
+
+  - type: input
+    id: wcag
+    attributes:
+      label: Related WCAG criterion
+      description: Optional, if you happen to know it
+      placeholder: "1.4.3 Contrast (Minimum)"
+    validations:
+      required: false

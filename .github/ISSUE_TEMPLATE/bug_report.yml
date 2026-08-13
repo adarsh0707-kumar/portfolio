@@ -1,0 +1,83 @@
+name: Bug report
+description: Something on the site is broken, misaligned, or behaving oddly
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting this. If the problem is a security vulnerability,
+        please **do not** file it here — see the
+        [Security Policy](https://github.com/adarsh0707-kumar/portfolio/blob/main/SECURITY.md).
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you see, and what did you expect instead?
+      placeholder: The certificate lightbox opens but Escape does not close it.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to the Skills section
+        2. Click a certificate thumbnail
+        3. Press Escape
+        4. The overlay stays open
+    validations:
+      required: true
+
+  - type: input
+    id: where
+    attributes:
+      label: Where on the site?
+      description: Section name or anchor, e.g. Hero, Projects, `#skills`
+    validations:
+      required: false
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Samsung Internet
+        - Other (say which below)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device
+      options:
+        - Desktop
+        - Laptop
+        - Tablet
+        - Phone
+    validations:
+      required: true
+
+  - type: input
+    id: screen-width
+    attributes:
+      label: Screen width
+      description: Helpful for layout bugs. DevTools shows this, or just estimate.
+      placeholder: "390px"
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot
+      description: Paste an image if it is a visual problem — it saves a lot of back and forth.
+    validations:
+      required: false

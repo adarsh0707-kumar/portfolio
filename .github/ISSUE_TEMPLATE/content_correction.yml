@@ -1,0 +1,41 @@
+name: Content correction
+description: A typo, a broken link, or something factually wrong on the site
+title: "[Content]: "
+labels: ["content"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of correction?
+      options:
+        - Typo or grammar
+        - Broken link (404)
+        - Dead demo — project link loads but the site is down
+        - Wrong or outdated information
+        - Missing certificate or project
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: where
+    attributes:
+      label: Where is it?
+      description: Section, project name, or certificate name
+      placeholder: "Projects → Movie Recommender"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: What it says now
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested
+    attributes:
+      label: What it should say
+    validations:
+      required: false

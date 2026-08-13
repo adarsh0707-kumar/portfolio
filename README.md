@@ -53,5 +53,24 @@ disc, so:
 
 ## Deploying
 
-Easiest options: Vercel or Netlify — connect your GitHub repo and both
-auto-detect the Vite build (`npm run build`, output folder `dist`).
+Deployed on Vercel at <https://portfolio-orpin-zeta-77.vercel.app>, which
+rebuilds automatically on every push to `main`. Netlify works the same way —
+both auto-detect the Vite build (`npm run build`, output folder `dist`).
+
+## Contributing
+
+Bug reports, accessibility findings, typos, and dead links are all welcome —
+see [CONTRIBUTING.md](CONTRIBUTING.md) for how to run the project and what
+kinds of change make sense here. Participation is governed by the
+[Code of Conduct](CODE_OF_CONDUCT.md). For anything security related, follow
+the [Security Policy](SECURITY.md) rather than opening a public issue.
+
+## License
+
+The **source code** is released under the [MIT License](LICENSE) — take it,
+fork it, use it as the basis for your own site.
+
+The **personal content is not covered by that license.** That means the photo
+(`public/profile.png`), the résumé, everything in `public/certificates/`, and
+the biographical copy throughout the site. Those are mine. If you reuse this
+project as a template, replace all of it with your own.
