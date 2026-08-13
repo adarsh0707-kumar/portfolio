@@ -1,0 +1,126 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-title {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  line-height: 1.25;
+  margin-bottom: 20px;
+  max-width: 18ch;
+}
+
+.about-body {
+  color: var(--text-muted);
+  line-height: 1.75;
+  font-size: 0.98rem;
+  margin: 0 0 16px;
+}
+
+.about-cta { margin-top: 10px; }
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.stat-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.stat-tile:hover {
+  border-color: rgba(124, 92, 252, 0.45);
+  transform: translateY(-3px);
+}
+
+.stat-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  color: var(--accent-bright);
+  background: var(--accent-dim);
+  margin-bottom: 10px;
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ---- Timeline ---- */
+
+.timeline {
+  margin-top: 64px;
+  border-left: 2px solid var(--border);
+  padding-left: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.timeline-item { position: relative; }
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -35px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-dim);
+}
+
+.timeline-tag {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--accent-bright);
+}
+
+.timeline-title {
+  font-size: 1.05rem;
+  margin: 7px 0 3px;
+}
+
+.timeline-org {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.timeline-body {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 10px 0 0;
+  max-width: 72ch;
+}
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-title { max-width: none; }
+}
+
+@media (max-width: 480px) {
+  .stat-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,18 @@
+.site-footer {
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: var(--text-faint);
+}
+
+.footer-heart { color: var(--accent-bright); }
+
+@media (max-width: 560px) {
+  .footer-inner { flex-direction: column; }
+}

@@ -1,0 +1,213 @@
+.certs {
+  margin-top: 64px;
+  padding-top: 44px;
+  border-top: 1px solid var(--border);
+}
+
+.certs-title {
+  font-size: 1.3rem;
+  margin-bottom: 22px;
+}
+
+.certs-title-sub { margin-top: 44px; }
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 16px;
+}
+
+.cert-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.cert-card:hover {
+  border-color: rgba(124, 92, 252, 0.45);
+  transform: translateY(-3px);
+}
+
+.cert-thumb {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.cert-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover .cert-thumb img { transform: scale(1.03); }
+
+.cert-body { padding: 22px; }
+
+.cert-name {
+  font-size: 0.98rem;
+  line-height: 1.35;
+  margin: 0 0 6px;
+}
+
+.cert-issuer {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  margin: 0 0 12px;
+}
+
+.cert-issuer .dot { margin: 0 7px; color: var(--text-faint); }
+
+.cert-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.cert-chip {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 4px 9px;
+  border-radius: 20px;
+  background: var(--accent-dim);
+  color: var(--accent-bright);
+}
+
+.cert-id {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.cert-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.cert-link {
+  font-family: inherit;
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: var(--accent-bright);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 0.18s ease;
+}
+
+.cert-link:hover { opacity: 0.75; }
+.cert-link.is-verify { color: #22C55E; }
+.cert-link.is-linkedin { color: #38BDF8; }
+
+/* ---- Lightbox ---- */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(4, 4, 10, 0.88);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  animation: lb-fade 0.16s ease;
+}
+
+@keyframes lb-fade { from { opacity: 0; } }
+
+.lightbox-inner {
+  width: min(980px, 100%);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.lightbox-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 16px;
+  background: var(--surface-raised);
+  border-bottom: 1px solid var(--border);
+}
+
+.lightbox-title {
+  font-size: 0.88rem;
+  color: var(--text);
+}
+
+.lightbox-close {
+  font-family: inherit;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--text-muted);
+  background: none;
+  border: 0;
+  padding: 0 4px;
+  cursor: pointer;
+  transition: color 0.18s ease;
+}
+
+.lightbox-close:hover { color: var(--text); }
+
+.lightbox-inner img {
+  width: 100%;
+  height: auto;
+  max-height: calc(90vh - 48px);
+  object-fit: contain;
+  background: #fff;
+}
+
+/* ---- Trainings ---- */
+
+.training-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.training-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.training-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+.training-name { font-size: 0.92rem; color: var(--text); }
+.training-meta { font-size: 0.82rem; color: var(--text-faint); }
+
+@media (max-width: 560px) {
+  .cert-grid { grid-template-columns: 1fr; }
+  .cert-body { padding: 18px; }
+}
