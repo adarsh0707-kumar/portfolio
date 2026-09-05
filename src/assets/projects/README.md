@@ -1,13 +1,12 @@
 # Project screenshots
 
 Drop images into a folder here and they appear in that project's gallery.
-There is no list to maintain — `scripts/generate-image-manifest.mjs` scans
-this directory before every `npm run dev` and `npm run build` and picks up
-whatever it finds.
+There is no list to maintain — Vite reads this directory at build time via
+`import.meta.glob`, so it picks up whatever it finds.
 
-    public/projects/<Folder>/01.png
-    public/projects/<Folder>/02-kanban-board.png
-    public/projects/<Folder>/03.png
+    src/assets/projects/<Folder>/01.png
+    src/assets/projects/<Folder>/02-kanban-board.png
+    src/assets/projects/<Folder>/03.png
 
 ## Which folder belongs to which project?
 
@@ -22,14 +21,14 @@ project in `src/data/projects.js`:
 {
   name: 'Team Task Manager',
   slug: 'team-task-manager',
-  imageFolder: 'TaskFlow',   // public/projects/TaskFlow/
+  imageFolder: 'TaskFlow',   // src/assets/projects/TaskFlow/
   ...
 }
 ```
 
-Run `npm run images` and read the output — it prints every folder it found
-and how many images are in each. A folder no project claims will never show
-up on the site, so check the name if a gallery is empty.
+A folder no project claims never shows up on the site. In development the
+console warns about any such folder by name, so check there first if a
+gallery is empty.
 
 ## Ordering
 
@@ -54,11 +53,12 @@ what they are looking at; `MedBillPro07.png` does not.
 
 `.png` `.jpg` `.jpeg` `.webp` `.avif` `.gif`
 
-PNG for UI screenshots, WebP or JPG for photos. These are served as-is from
-`public/`, so compress large files before committing them — a 3 MB
-screenshot is a 3 MB download for every visitor.
+PNG for UI screenshots, WebP or JPG for photos. Vite fingerprints every
+file for long-term caching and inlines anything under 4 KB, but it does not
+recompress — so shrink a 3 MB screenshot before committing it.
 
 ## How many?
 
-As many as you like. One image renders as a single frame; two or more get
-arrows, a counter, a thumbnail strip, keyboard arrows and swipe.
+As many as you like. One image renders as a single frame. Two or more get arrows, a counter, a
+thumbnail strip, keyboard arrows, swipe, and an automatic slideshow that
+pauses on hover and stops the moment anyone navigates by hand.

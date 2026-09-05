@@ -123,14 +123,6 @@ export default function ProjectDetail() {
           </div>
         </header>
 
-        {details?.overview && (
-          <Section title="Overview">
-            {details.overview.map((para, i) => (
-              <p className="pd-para" key={i}>{para}</p>
-            ))}
-          </Section>
-        )}
-
         {images.length > 0 && (
           <Section title="Screenshots">
             <ProjectGallery
@@ -145,6 +137,14 @@ export default function ProjectDetail() {
                 })
               }
             />
+          </Section>
+        )}
+
+        {details?.overview && (
+          <Section title="Overview">
+            {details.overview.map((para, i) => (
+              <p className="pd-para" key={i}>{para}</p>
+            ))}
           </Section>
         )}
 
