@@ -22,13 +22,16 @@ function usePrefersReducedMotion() {
 }
 
 export default function ProjectGallery({ images, projectName, onOpen }) {
+  const reducedMotion = usePrefersReducedMotion()
+
   const [index, setIndex] = useState(0)
-  const [playing, setPlaying] = useState(true)
+  // Starts paused for anyone who asked the OS to reduce motion. The control is
+  // still offered, so they can opt in deliberately if they want it.
+  const [playing, setPlaying] = useState(() => !reducedMotion)
   const [paused, setPaused] = useState(false)
 
   const touchStartX = useRef(null)
   const thumbStripRef = useRef(null)
-  const reducedMotion = usePrefersReducedMotion()
 
   const count = images.length
   const go = (i) => setIndex(((i % count) + count) % count)
@@ -42,7 +45,9 @@ export default function ProjectGallery({ images, projectName, onOpen }) {
     fn()
   }
 
-  const autoplayActive = playing && !paused && !reducedMotion && count > 1
+  // reducedMotion only sets the initial state, so pressing play still works for
+  // someone who wants the slideshow despite the OS preference.
+  const autoplayActive = playing && !paused && count > 1
 
   useEffect(() => {
     if (!autoplayActive) return
@@ -147,21 +152,9 @@ export default function ProjectGallery({ images, projectName, onOpen }) {
               <span aria-hidden="true">›</span>
             </button>
 
-            <div className="gallery-controls">
-              {!reducedMotion && (
-                <button
-                  type="button"
-                  className="gallery-play"
-                  onClick={() => setPlaying((p) => !p)}
-                  aria-label={playing ? 'Pause slideshow' : 'Play slideshow'}
-                >
-                  <span aria-hidden="true">{playing ? '❙❙' : '▶'}</span>
-                </button>
-              )}
-              <span className="gallery-counter">
-                {index + 1} / {count}
-              </span>
-            </div>
+            <span className="gallery-counter">
+              {index + 1} / {count}
+            </span>
 
             {/* Progress bar restarts on each slide while autoplay is running */}
             {autoplayActive && (
@@ -174,10 +167,25 @@ export default function ProjectGallery({ images, projectName, onOpen }) {
       </div>
 
       <div className="gallery-caption-row">
+        {count > 1 && (
+          <button
+            type="button"
+            className={`gallery-play ${playing ? 'is-playing' : ''}`}
+            onClick={() => setPlaying((p) => !p)}
+            aria-pressed={playing}
+          >
+            <span className="gallery-play-icon" aria-hidden="true">
+              {playing ? '❙❙' : '▶'}
+            </span>
+            {playing ? 'Pause slideshow' : 'Play slideshow'}
+          </button>
+        )}
+
         <p className="gallery-caption" aria-live="polite">
           {current.caption || ' '}
         </p>
-        <span className="gallery-hint">Click to enlarge</span>
+
+        <span className="gallery-hint">Click image to enlarge</span>
       </div>
 
       {count > 1 && (
