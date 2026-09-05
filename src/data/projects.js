@@ -96,8 +96,6 @@ export const PROJECTS = [
   {
     name: 'Team Task Manager',
     slug: 'team-task-manager',
-    // Screenshots live in public/projects/TaskFlow/ — the product's own name.
-    imageFolder: 'TaskFlow',
     monogram: 'TM',
     category: 'Full-Stack',
     year: '2026',
