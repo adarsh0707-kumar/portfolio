@@ -4,7 +4,7 @@ import { PROJECTS, TINTS } from '../data/projects'
 import { PROJECT_DETAILS } from '../data/projectDetails'
 import { getProjectImages } from '../data/projectImages'
 import ProjectGallery from './ProjectGallery'
-import ProjectPlaceholder from './ProjectPlaceholder'
+import ProjectPlaceholder from './Projectplaceholder'
 import Lightbox from './Lightbox'
 import './ProjectDetail.css'
 

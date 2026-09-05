@@ -1,4 +1,4 @@
-import './ProjectPlaceholder.css'
+import './Projectplaceholder.css'
 
 // Shown in the Screenshots section for a project whose image folder is empty.
 // Mirrors the tinted monogram thumb used on the project cards (Projects.jsx)
