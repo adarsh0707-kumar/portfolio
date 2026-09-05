@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { PROJECTS, CATEGORIES, TINTS } from '../data/projects'
 import './Projects.css'
 
@@ -61,15 +62,17 @@ export default function Projects() {
               key={p.name}
               style={{ '--tint': TINTS[p.category] }}
             >
-              <div className="project-thumb">
+              <Link to={`/projects/${p.slug}`} className="project-thumb">
                 <span className="project-num">{String(i + 1).padStart(2, '0')}</span>
                 <span className="project-monogram" aria-hidden="true">{p.monogram}</span>
                 <span className="project-cat">{p.category}</span>
-              </div>
+              </Link>
 
               <div className="project-body">
                 <div className="project-top">
-                  <h3 className="project-name">{p.name}</h3>
+                  <h3 className="project-name">
+                    <Link to={`/projects/${p.slug}`}>{p.name}</Link>
+                  </h3>
                   <span className="project-date">{p.year}</span>
                 </div>
 
@@ -82,12 +85,15 @@ export default function Projects() {
                 </div>
 
                 <div className="project-links">
+                  <Link to={`/projects/${p.slug}`} className="project-link is-primary">
+                    Read more <span aria-hidden="true">→</span>
+                  </Link>
                   <a href={p.link} target="_blank" rel="noreferrer" className="project-link">
                     Code <span aria-hidden="true">↗</span>
                   </a>
                   {p.demo && (
                     <a href={p.demo} target="_blank" rel="noreferrer" className="project-link is-demo">
-                      Live Demo <span aria-hidden="true">↗</span>
+                      Demo <span aria-hidden="true">↗</span>
                     </a>
                   )}
                 </div>

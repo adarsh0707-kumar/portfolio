@@ -16,6 +16,7 @@ export const PROJECTS = [
   // ---------- Featured ----------
   {
     name: 'Meta Micro — Coaching SaaS',
+    slug: 'meta-micro-coaching-saas',
     monogram: 'MM',
     category: 'Full-Stack',
     year: '2026',
@@ -26,6 +27,7 @@ export const PROJECTS = [
   },
   {
     name: 'Football Club Platform',
+    slug: 'football-club-platform',
     monogram: 'FC',
     category: 'Full-Stack',
     year: '2026',
@@ -36,6 +38,7 @@ export const PROJECTS = [
   },
   {
     name: 'MedBill Pro',
+    slug: 'medbill-pro',
     monogram: 'MB',
     category: 'Full-Stack',
     year: '2026',
@@ -46,6 +49,7 @@ export const PROJECTS = [
   },
   {
     name: 'Visitor Management Module',
+    slug: 'visitor-management-module',
     monogram: 'VM',
     category: 'Full-Stack',
     year: '2026',
@@ -57,6 +61,7 @@ export const PROJECTS = [
   },
   {
     name: 'Database Engine',
+    slug: 'database-engine',
     monogram: 'DB',
     category: 'Systems & C++',
     year: '2026',
@@ -67,6 +72,7 @@ export const PROJECTS = [
   },
   {
     name: 'Multi-threaded Web Server',
+    slug: 'multi-threaded-web-server',
     monogram: 'WS',
     category: 'Systems & C++',
     year: '2026',
@@ -77,6 +83,7 @@ export const PROJECTS = [
   },
   {
     name: 'Welth — Finance Tracker',
+    slug: 'welth-finance-tracker',
     monogram: 'W',
     category: 'Full-Stack',
     year: '2025',
@@ -88,6 +95,7 @@ export const PROJECTS = [
   },
   {
     name: 'Team Task Manager',
+    slug: 'team-task-manager',
     monogram: 'TM',
     category: 'Full-Stack',
     year: '2026',
@@ -99,6 +107,7 @@ export const PROJECTS = [
   },
   {
     name: 'Scientific Calculator Engine',
+    slug: 'scientific-calculator-engine',
     monogram: 'CA',
     category: 'Systems & C++',
     year: '2026',
@@ -109,6 +118,7 @@ export const PROJECTS = [
   },
   {
     name: 'Digital Clock System',
+    slug: 'digital-clock-system',
     monogram: 'DC',
     category: 'Systems & C++',
     year: '2026',
@@ -119,6 +129,7 @@ export const PROJECTS = [
   },
   {
     name: 'Guess The Number',
+    slug: 'guess-the-number',
     monogram: 'GN',
     category: 'Systems & C++',
     year: '2026',
@@ -128,6 +139,7 @@ export const PROJECTS = [
   },
   {
     name: 'Real-time Chat App',
+    slug: 'real-time-chat-app',
     monogram: 'CA',
     category: 'Systems & C++',
     year: '2026',
@@ -138,6 +150,7 @@ export const PROJECTS = [
   },
   {
     name: 'OrthoNow Landing Page',
+    slug: 'orthonow-landing-page',
     monogram: 'ON',
     category: 'Full-Stack',
     year: '2026',
@@ -149,6 +162,7 @@ export const PROJECTS = [
   },
   {
     name: 'Movie Recommender',
+    slug: 'movie-recommender',
     monogram: 'MR',
     category: 'Data & AI',
     year: '2025',
@@ -162,6 +176,7 @@ export const PROJECTS = [
   // ---------- Systems & C++ ----------
   {
     name: 'Redis Clone',
+    slug: 'redis-clone',
     monogram: 'RC',
     category: 'Systems & C++',
     year: '2026',
@@ -171,6 +186,7 @@ export const PROJECTS = [
   },
   {
     name: 'Hotel Management System',
+    slug: 'hotel-management-system',
     monogram: 'HM',
     category: 'Systems & C++',
     year: '2026',
@@ -180,6 +196,7 @@ export const PROJECTS = [
   },
   {
     name: 'Transit Discount System',
+    slug: 'transit-discount-system',
     monogram: 'TD',
     category: 'Systems & C++',
     year: '2026',
@@ -191,6 +208,7 @@ export const PROJECTS = [
   // ---------- Full-Stack ----------
   {
     name: 'Keycloak Auth Integration',
+    slug: 'keycloak-auth-integration',
     monogram: 'KC',
     category: 'Full-Stack',
     year: '2026',
@@ -200,6 +218,7 @@ export const PROJECTS = [
   },
   {
     name: 'Expense Manager',
+    slug: 'expense-manager',
     monogram: 'EM',
     category: 'Full-Stack',
     year: '2026',
@@ -209,6 +228,7 @@ export const PROJECTS = [
   },
   {
     name: 'Expense Tracker',
+    slug: 'expense-tracker',
     monogram: 'ET',
     category: 'Full-Stack',
     year: '2025',
@@ -219,6 +239,7 @@ export const PROJECTS = [
   },
   {
     name: 'MERN LMS',
+    slug: 'mern-lms',
     monogram: 'LM',
     category: 'Full-Stack',
     year: '2025',
@@ -228,6 +249,7 @@ export const PROJECTS = [
   },
   {
     name: 'Online Learning Platform',
+    slug: 'online-learning-platform',
     monogram: 'OL',
     category: 'Full-Stack',
     year: '2025',
@@ -237,6 +259,7 @@ export const PROJECTS = [
   },
   {
     name: 'MERN Blog App',
+    slug: 'mern-blog-app',
     monogram: 'BL',
     category: 'Full-Stack',
     year: '2024',
@@ -247,6 +270,7 @@ export const PROJECTS = [
   },
   {
     name: 'YouTube Clone',
+    slug: 'youtube-clone',
     monogram: 'YT',
     category: 'Full-Stack',
     year: '2025',
@@ -257,6 +281,7 @@ export const PROJECTS = [
   },
   {
     name: 'Invoice App',
+    slug: 'invoice-app',
     monogram: 'IN',
     category: 'Full-Stack',
     year: '2024',
@@ -266,6 +291,7 @@ export const PROJECTS = [
   },
   {
     name: 'GodDev.AI',
+    slug: 'goddevai',
     monogram: 'GD',
     category: 'Full-Stack',
     year: '2025',
@@ -275,6 +301,7 @@ export const PROJECTS = [
   },
   {
     name: 'Firebase App',
+    slug: 'firebase-app',
     monogram: 'FB',
     category: 'Full-Stack',
     year: '2024',
@@ -285,6 +312,7 @@ export const PROJECTS = [
   },
   {
     name: 'CRUD App',
+    slug: 'crud-app',
     monogram: 'CR',
     category: 'Full-Stack',
     year: '2024',
@@ -294,6 +322,7 @@ export const PROJECTS = [
   },
   {
     name: 'Finance Web App',
+    slug: 'finance-web-app',
     monogram: 'FW',
     category: 'Full-Stack',
     year: '2025',
@@ -305,6 +334,7 @@ export const PROJECTS = [
   // ---------- Data & AI ----------
   {
     name: 'Tableau Dashboards',
+    slug: 'tableau-dashboards',
     monogram: 'TB',
     category: 'Data & AI',
     year: '2025',
@@ -314,6 +344,7 @@ export const PROJECTS = [
   },
   {
     name: 'Data Science Notebooks',
+    slug: 'data-science-notebooks',
     monogram: 'DS',
     category: 'Data & AI',
     year: '2025',
@@ -323,6 +354,7 @@ export const PROJECTS = [
   },
   {
     name: 'AI & ML Training',
+    slug: 'ai-and-ml-training',
     monogram: 'AI',
     category: 'Data & AI',
     year: '2025',
@@ -332,6 +364,7 @@ export const PROJECTS = [
   },
   {
     name: 'Python Course',
+    slug: 'python-course',
     monogram: 'PY',
     category: 'Data & AI',
     year: '2025',
@@ -341,6 +374,7 @@ export const PROJECTS = [
   },
   {
     name: 'QR Code Generator',
+    slug: 'qr-code-generator',
     monogram: 'QR',
     category: 'Data & AI',
     year: '2024',
@@ -350,6 +384,7 @@ export const PROJECTS = [
   },
   {
     name: 'Django Projects',
+    slug: 'django-projects',
     monogram: 'DJ',
     category: 'Data & AI',
     year: '2025',
@@ -361,6 +396,7 @@ export const PROJECTS = [
   // ---------- Frontend ----------
   {
     name: 'Calculator',
+    slug: 'calculator',
     monogram: 'CL',
     category: 'Frontend',
     year: '2024',
@@ -370,6 +406,7 @@ export const PROJECTS = [
   },
   {
     name: 'Clock',
+    slug: 'clock',
     monogram: 'CK',
     category: 'Frontend',
     year: '2024',
@@ -379,6 +416,7 @@ export const PROJECTS = [
   },
   {
     name: 'Coffee Website',
+    slug: 'coffee-website',
     monogram: 'CF',
     category: 'Frontend',
     year: '2022',
@@ -388,6 +426,7 @@ export const PROJECTS = [
   },
   {
     name: 'Colliery Town AFC — Demo',
+    slug: 'colliery-town-afc-demo',
     monogram: 'CT',
     category: 'Frontend',
     year: '2026',
@@ -398,6 +437,7 @@ export const PROJECTS = [
   },
   {
     name: 'Vite Project',
+    slug: 'vite-project',
     monogram: 'VT',
     category: 'Frontend',
     year: '2024',
@@ -407,6 +447,7 @@ export const PROJECTS = [
   },
   {
     name: 'React Router Example',
+    slug: 'react-router-example',
     monogram: 'RR',
     category: 'Frontend',
     year: '2024',
@@ -416,6 +457,7 @@ export const PROJECTS = [
   },
   {
     name: 'Goals Page',
+    slug: 'goals-page',
     monogram: 'GP',
     category: 'Frontend',
     year: '2024',

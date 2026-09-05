@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import Lightbox from './Lightbox'
 import './Certifications.css'
 
 // Titles, dates, and credential IDs transcribed from the certificates themselves.
@@ -76,30 +77,6 @@ const TRAININGS = [
     date: 'Apr 2025',
   },
 ]
-
-function Lightbox({ cert, onClose }) {
-  useEffect(() => {
-    const onKey = (e) => { if (e.key === 'Escape') onClose() }
-    document.addEventListener('keydown', onKey)
-    document.body.style.overflow = 'hidden'
-    return () => {
-      document.removeEventListener('keydown', onKey)
-      document.body.style.overflow = ''
-    }
-  }, [onClose])
-
-  return (
-    <div className="lightbox" role="dialog" aria-modal="true" aria-label={cert.name} onClick={onClose}>
-      <div className="lightbox-inner" onClick={(e) => e.stopPropagation()}>
-        <div className="lightbox-bar">
-          <span className="lightbox-title">{cert.name}</span>
-          <button type="button" className="lightbox-close" onClick={onClose} aria-label="Close">×</button>
-        </div>
-        <img src={cert.image} alt={`${cert.name} certificate issued by ${cert.issuer}`} />
-      </div>
-    </div>
-  )
-}
 
 export default function Certifications() {
   const [active, setActive] = useState(null)
@@ -192,7 +169,11 @@ export default function Certifications() {
         ))}
       </ul>
 
-      {active && <Lightbox cert={active} onClose={() => setActive(null)} />}
+      {active && <Lightbox
+          src={active.image}
+          label={`${active.name} — ${active.issuer}`}
+          onClose={() => setActive(null)}
+        />}
     </div>
   )
 }
