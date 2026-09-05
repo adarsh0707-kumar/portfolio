@@ -4,9 +4,12 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node scripts/generate-image-manifest.mjs",
     "dev": "vite",
+    "prebuild": "node scripts/generate-image-manifest.mjs",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "images": "node scripts/generate-image-manifest.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

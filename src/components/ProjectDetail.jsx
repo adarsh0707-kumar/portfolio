@@ -2,12 +2,10 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { PROJECTS, TINTS } from '../data/projects'
 import { PROJECT_DETAILS } from '../data/projectDetails'
+import { getProjectImages } from '../data/projectImages'
+import ProjectGallery from './ProjectGallery'
 import Lightbox from './Lightbox'
 import './ProjectDetail.css'
-
-// Screenshots are discovered by convention: drop 01.png, 02.png ... into
-// public/projects/<slug>/. Slots that 404 are removed from the gallery.
-const SCREENSHOT_SLOTS = ['01', '02', '03', '04']
 
 function repoPath(link) {
   const m = link && link.match(/github\.com\/([^/]+)\/([^/?#]+)/)
@@ -67,11 +65,10 @@ export default function ProjectDetail() {
   const project = PROJECTS.find((p) => p.slug === slug)
   const details = project ? PROJECT_DETAILS[project.slug] : null
 
-  const [shots, setShots] = useState([])
+  const images = project ? getProjectImages(project.slug) : []
   const [active, setActive] = useState(null)
 
   useEffect(() => {
-    setShots([])
     setActive(null)
   }, [slug])
 
@@ -94,21 +91,8 @@ export default function ProjectDetail() {
   const ideaUrl = issueUrl(project.link, 'idea', project.name)
   const repo = repoPath(project.link)
 
-  const markLoaded = (src) =>
-    setShots((prev) => (prev.includes(src) ? prev : [...prev, src]))
-
   return (
     <main className="project-detail" style={{ '--tint': tint }}>
-      {/* Hidden probes — each slot that loads gets promoted into the gallery */}
-      <div className="pd-probe" aria-hidden="true">
-        {SCREENSHOT_SLOTS.map((n) => {
-          const src = `/projects/${project.slug}/${n}.png`
-          return (
-            <img key={src} src={src} alt="" onLoad={() => markLoaded(src)} onError={() => {}} />
-          )
-        })}
-      </div>
-
       <div className="container">
         <Link to="/#projects" className="pd-back">← All projects</Link>
 
@@ -147,20 +131,20 @@ export default function ProjectDetail() {
           </Section>
         )}
 
-        {shots.length > 0 && (
+        {images.length > 0 && (
           <Section title="Screenshots">
-            <div className="pd-gallery">
-              {[...shots].sort().map((src, i) => (
-                <button
-                  type="button"
-                  className="pd-shot"
-                  key={src}
-                  onClick={() => setActive({ src, label: `${project.name} — ${i + 1}` })}
-                >
-                  <img src={src} alt={`${project.name} screenshot ${i + 1}`} loading="lazy" />
-                </button>
-              ))}
-            </div>
+            <ProjectGallery
+              images={images}
+              projectName={project.name}
+              onOpen={(i) =>
+                setActive({
+                  src: images[i].url,
+                  label: images[i].caption
+                    ? `${project.name} — ${images[i].caption}`
+                    : `${project.name} — ${i + 1} of ${images.length}`,
+                })
+              }
+            />
           </Section>
         )}
 

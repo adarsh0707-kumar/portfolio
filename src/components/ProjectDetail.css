@@ -2,15 +2,6 @@
   padding: 48px 0 96px;
 }
 
-.pd-probe {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-
 .pd-back {
   display: inline-block;
   font-size: 0.86rem;
@@ -184,36 +175,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-}
-
-/* ---- Screenshots ---- */
-
-.pd-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 16px;
-}
-
-.pd-shot {
-  display: block;
-  padding: 0;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface-raised);
-  overflow: hidden;
-  cursor: pointer;
-  transition: border-color 0.2s ease, transform 0.2s ease;
-}
-
-.pd-shot:hover {
-  border-color: color-mix(in srgb, var(--tint, #7C5CFC) 55%, transparent);
-  transform: translateY(-3px);
-}
-
-.pd-shot img {
-  display: block;
-  width: 100%;
-  height: auto;
 }
 
 /* ---- Demo credentials ---- */
