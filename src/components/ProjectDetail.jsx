@@ -4,6 +4,7 @@ import { PROJECTS, TINTS } from '../data/projects'
 import { PROJECT_DETAILS } from '../data/projectDetails'
 import { getProjectImages } from '../data/projectImages'
 import ProjectGallery from './ProjectGallery'
+import ProjectPlaceholder from './ProjectPlaceholder'
 import Lightbox from './Lightbox'
 import './ProjectDetail.css'
 
@@ -24,29 +25,29 @@ function issueUrl(link, kind, projectName) {
   const body =
     kind === 'bug'
       ? [
-          '**What went wrong?**',
-          '',
-          '',
-          '**Steps to reproduce**',
-          '1. ',
-          '2. ',
-          '',
-          '**What did you expect instead?**',
-          '',
-          '',
-          '---',
-          '_Reported from Adarsh Kumar\'s portfolio._',
-        ].join('\n')
+        '**What went wrong?**',
+        '',
+        '',
+        '**Steps to reproduce**',
+        '1. ',
+        '2. ',
+        '',
+        '**What did you expect instead?**',
+        '',
+        '',
+        '---',
+        '_Reported from Adarsh Kumar\'s portfolio._',
+      ].join('\n')
       : [
-          '**What would you improve?**',
-          '',
-          '',
-          '**Why would it be better?**',
-          '',
-          '',
-          '---',
-          '_Suggested from Adarsh Kumar\'s portfolio._',
-        ].join('\n')
+        '**What would you improve?**',
+        '',
+        '',
+        '**Why would it be better?**',
+        '',
+        '',
+        '---',
+        '_Suggested from Adarsh Kumar\'s portfolio._',
+      ].join('\n')
 
   return `https://github.com/${repo}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`
 }
@@ -123,8 +124,8 @@ export default function ProjectDetail() {
           </div>
         </header>
 
-        {images.length > 0 && (
-          <Section title="Screenshots">
+        <Section title="Screenshots">
+          {images.length > 0 ? (
             <ProjectGallery
               images={images}
               projectName={project.name}
@@ -137,8 +138,10 @@ export default function ProjectDetail() {
                 })
               }
             />
-          </Section>
-        )}
+          ) : (
+            <ProjectPlaceholder monogram={project.monogram} category={project.category} />
+          )}
+        </Section>
 
         {details?.overview && (
           <Section title="Overview">
