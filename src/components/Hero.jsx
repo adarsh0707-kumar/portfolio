@@ -64,7 +64,7 @@ export default function Hero() {
 
           <div className="hero-actions">
             <a href="#projects" className="btn btn-primary">View My Work <span aria-hidden="true">↗</span></a>
-            <a href="public/Adarsh_Kumar_Resume.pdf" target="_blank" rel="noreferrer" className="btn btn-ghost">Download CV <span aria-hidden="true">↓</span></a>
+            <a href="/Adarsh_Kumar_Resume.pdf" target="_blank" rel="noreferrer" className="btn btn-ghost">Download CV <span aria-hidden="true">↓</span></a>
           </div>
 
           <p className="tech-label">TECHNOLOGIES I WORK WITH</p>
