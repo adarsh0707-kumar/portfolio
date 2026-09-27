@@ -1,17 +1,17 @@
 :root {
-  /* Color tokens — indigo/violet dark theme */
-  --bg: #08080F;
-  --surface: #101020;
-  --surface-raised: #16162B;
-  --border: #22223A;
-  --text: #F2F2F7;
-  --text-muted: #9A9AB4;
-  --text-faint: #6A6A85;
+  /* Color tokens — GitHub profile dark / green theme */
+  --bg: #0D1117;
+  --surface: #161B22;
+  --surface-raised: #21262D;
+  --border: #30363D;
+  --text: #F0F6FC;
+  --text-muted: #8B949E;
+  --text-faint: #6E7681;
 
-  --accent: #7C5CFC;
-  --accent-bright: #A78BFA;
-  --accent-dim: rgba(124, 92, 252, 0.12);
-  --accent-glow: rgba(124, 92, 252, 0.35);
+  --accent: #39D353;
+  --accent-bright: #7EE787;
+  --accent-dim: rgba(57, 211, 83, 0.12);
+  --accent-glow: rgba(57, 211, 83, 0.35);
 
   /* Type */
   --font-display: 'Space Grotesk', sans-serif;
@@ -94,7 +94,7 @@ h1, h2, h3, h4 {
 }
 
 .btn-primary:hover {
-  background: #6B4AF0;
+  background: #2EA043;
   transform: translateY(-2px);
 }
 
