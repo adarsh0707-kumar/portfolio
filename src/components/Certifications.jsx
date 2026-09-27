@@ -27,6 +27,16 @@ const CERTS = [
     linkedinUrl: LINKEDIN_CERTS,
   },
   {
+    name: 'C Programming Basics',
+    issuer: 'Simplilearn SkillUp',
+    issued: '26 Sep 2026',
+    credentialId: '10790291',
+    verifyUrl: 'https://certificates.simplicdn.net/share/10790291_11154348_1790418215624.pdf',
+    skills: ['C Programming', 'Programming Fundamentals'],
+    image: '/certificates/Simplilearn-C.png',
+    linkedinUrl: LINKEDIN_CERTS,
+  },
+  {
     name: '30 Days Power BI Micro Course',
     issuer: 'SkillCourse',
     issued: '01 Jul 2026',
