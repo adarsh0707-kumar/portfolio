@@ -100,24 +100,31 @@
   aspect-ratio: 1;
   transform: translate(-50%, -50%);
   pointer-events: none;
+  filter: drop-shadow(0 0 28px rgba(57, 211, 83, 0.18));
+}
+
+.hero-rings::marker {
+  display: none;
 }
 
 .hero-ring {
   position: absolute;
   inset: 50%;
   border-radius: 50%;
-  border: 1.5px solid rgba(126, 231, 135, 0.48);
+  border: 1.5px solid rgba(126, 231, 135, 0.7);
   transform: translate(-50%, -50%);
   box-shadow:
-    0 0 20px rgba(57, 211, 83, 0.2),
-    inset 0 0 20px rgba(57, 211, 83, 0.06);
-  animation: ringPulse 5.5s ease-in-out infinite;
+    0 0 12px rgba(126, 231, 135, 0.35),
+    0 0 34px rgba(57, 211, 83, 0.22),
+    0 0 70px rgba(57, 211, 83, 0.10),
+    inset 0 0 24px rgba(126, 231, 135, 0.10);
+  animation: ringPulse 4.8s ease-in-out infinite, ringGlow 2.8s ease-in-out infinite alternate;
 }
 
 .hero-ring:nth-child(1) {
   width: 22%;
   border-color: rgba(126, 231, 135, 0.75);
-  box-shadow: 0 0 22px rgba(126, 231, 135, 0.3);
+  box-shadow: 0 0 14px rgba(126, 231, 135, 0.65), 0 0 42px rgba(57, 211, 83, 0.34), inset 0 0 18px rgba(126, 231, 135, 0.12);
   animation-delay: -1s;
 }
 
@@ -137,6 +144,11 @@
   width: 78%;
   border-color: rgba(57, 211, 83, 0.32);
   animation-delay: -4.1s;
+}
+
+@keyframes ringGlow {
+  from { filter: brightness(0.9); }
+  to { filter: brightness(1.35); }
 }
 
 @keyframes ringPulse {
@@ -162,13 +174,14 @@
   border: 1px dashed rgba(126, 231, 135, 0.24);
   transform: translate(-50%, -50%);
   animation: ringRotate 18s linear infinite;
-  box-shadow: 0 0 28px rgba(57, 211, 83, 0.08);
+  box-shadow: 0 0 18px rgba(126, 231, 135, 0.16), 0 0 52px rgba(57, 211, 83, 0.10);
 }
 
 .hero-rings::after {
   width: 68%;
   border-style: solid;
-  border-color: rgba(57, 211, 83, 0.16);
+  border-color: rgba(126, 231, 135, 0.28);
+  box-shadow: 0 0 16px rgba(126, 231, 135, 0.18), 0 0 46px rgba(57, 211, 83, 0.08);
   animation-direction: reverse;
   animation-duration: 12s;
 }
