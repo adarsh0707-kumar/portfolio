@@ -29,10 +29,40 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--bg);
+  min-height: 100vh;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(circle at 8% 8%, rgba(57, 211, 83, 0.14) 0, rgba(57, 211, 83, 0.055) 18%, transparent 38%),
+    radial-gradient(circle at 92% 18%, rgba(126, 231, 135, 0.10) 0, rgba(57, 211, 83, 0.035) 16%, transparent 34%),
+    radial-gradient(circle at 50% 48%, rgba(57, 211, 83, 0.055) 0, transparent 30%),
+    radial-gradient(circle at 12% 88%, rgba(57, 211, 83, 0.075) 0, transparent 30%),
+    linear-gradient(rgba(57, 211, 83, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(57, 211, 83, 0.035) 1px, transparent 1px);
+  background-size:
+    auto,
+    auto,
+    auto,
+    auto,
+    44px 44px,
+    44px 44px;
+  background-attachment: fixed;
   color: var(--text);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.22;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(57, 211, 83, 0.18) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 70% 70%, rgba(126, 231, 135, 0.14) 0 1px, transparent 1.5px);
+  background-size: 72px 72px, 96px 96px;
+  mix-blend-mode: screen;
 }
 
 img { max-width: 100%; display: block; }
@@ -113,6 +143,10 @@ h1, h2, h3, h4 {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+
+  body {
+    background-attachment: scroll;
+  }
 }
 
 :focus-visible {
