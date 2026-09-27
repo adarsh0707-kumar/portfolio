@@ -616,7 +616,7 @@ export const PROJECT_DETAILS = {
       { group: 'Data & infrastructure', items: ['PostgreSQL', 'Redis', 'Nginx', 'Docker Compose', 'Protocol Buffers'] },
     ],
     docs: 'The repository includes product requirements, architecture, data model, API reference, development guide, security model, testing strategy, gap analysis and ADRs.',
-    notes: 'The repository describes the platform as in development and positions the current architecture as an implementation-ready portfolio project rather than a production-hosted coding service.',
+    notes: 'Status: Under development. The repository describes the platform as an implementation-ready portfolio project and the core platform is still being built; it is not presented as a production-hosted coding service yet.',
   },
 
   'distributed-media-analytics-platform': {
@@ -663,7 +663,7 @@ export const PROJECT_DETAILS = {
       { group: 'Testing', items: ['GoogleTest', 'pytest', 'Vitest', 'Playwright', 'k6'] },
     ],
     docs: 'The repository includes architecture, data model, API, security, testing, roadmap and ADR documentation covering FFmpeg integration, Redis queues, object storage, PostgreSQL and worker isolation.',
-    notes: 'The README describes the implementation as actively in development and explicitly distinguishes the architecture and engineering targets from production readiness.',
+    notes: 'Status: Under development. The architecture and engineering targets are documented, but the core vertical slice, automated validation, security hardening, observability and deployment work are still being completed before production readiness.',
   },
 
   'trao-ai-interview-prep-kit': {
@@ -755,7 +755,7 @@ export const PROJECT_DETAILS = {
       { group: 'Dashboard & infrastructure', items: ['React', 'PostgreSQL', 'Docker', 'Docker Compose'] },
     ],
     docs: 'The repository includes ADRs covering the polyglot architecture, socket IPC, JSON wire format, WebSocket gateway, Docker Compose and future shared-memory optimization.',
-    notes: 'This is a simulation, not a real trading system: market data is simulated and there is no real exchange connectivity, real order execution or real-money trading.',
+    notes: 'Status: Under development. This is a simulation, not a real trading system: market data is simulated and there is no real exchange connectivity, real order execution or real-money trading. The platform is being developed incrementally across the matching engine, analytics, gateway, dashboard, persistence and observability layers.',
   },
 
 }
