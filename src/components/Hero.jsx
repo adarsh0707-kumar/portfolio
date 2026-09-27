@@ -82,7 +82,12 @@ export default function Hero() {
         </div>
 
         <div className="hero-visual">
-          <span className="hero-blob" aria-hidden="true" />
+          <div className="hero-rings" aria-hidden="true">
+            <span className="hero-ring" />
+            <span className="hero-ring" />
+            <span className="hero-ring" />
+            <span className="hero-ring" />
+          </div>
           <span className="hero-dots" aria-hidden="true" />
 
           <svg className="hero-arrow" viewBox="0 0 80 92" fill="none" aria-hidden="true">
