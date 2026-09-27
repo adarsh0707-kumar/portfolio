@@ -572,7 +572,7 @@ export const PROJECT_DETAILS = {
       { group: 'Identity', items: ['Keycloak', 'OAuth2', 'JWT'] },
       { group: 'Frontend', items: ['React'] },
     ],
-  },,
+  },
 
   'codeforge-cloud': {
     tagline: 'A distributed online IDE where untrusted code runs inside a layered sandbox.',
