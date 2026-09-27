@@ -572,5 +572,190 @@ export const PROJECT_DETAILS = {
       { group: 'Identity', items: ['Keycloak', 'OAuth2', 'JWT'] },
       { group: 'Frontend', items: ['React'] },
     ],
+  },,
+
+  'codeforge-cloud': {
+    tagline: 'A distributed online IDE where untrusted code runs inside a layered sandbox.',
+    overview: [
+      'CodeForge Cloud combines a browser-based collaborative IDE with a distributed execution platform. The system separates the React workspace, API gateway, persistence, queueing, evaluator, sandbox runtime and infrastructure so expensive or untrusted workloads do not sit inside the public API process.',
+      'The execution path is deliberately defensive: source is validated, authenticated and authorized, captured as an immutable snapshot, placed behind a resource policy and queued before reaching the evaluator and C++ sandbox. Docker isolation, Linux namespaces, cgroups, seccomp, restricted capabilities, filesystem and network controls provide multiple layers of containment.',
+      'The project also treats collaboration and operations as first-class concerns, with WebSocket events, project membership and roles, execution history, structured identifiers and observability built into the architecture.',
+    ],
+    features: [
+      {
+        title: 'Browser IDE',
+        items: [
+          'Monaco Editor with syntax highlighting and project file exploration',
+          'Workspace, terminal output, execution controls and execution status',
+          'Real-time collaboration indicators and WebSocket updates',
+        ],
+      },
+      {
+        title: 'Execution platform',
+        items: [
+          'Immutable execution snapshots for reproducible runs',
+          'Asynchronous Redis-backed job processing',
+          'Python evaluator connected to a C++ sandbox through gRPC',
+          'Persistent execution history including status, timings, output and resource usage',
+        ],
+      },
+      {
+        title: 'Security & operations',
+        items: [
+          'Docker isolation with namespaces, cgroups and seccomp',
+          'CPU, memory, process, disk, output and execution-time limits',
+          'Authentication, authorization and project-level access control',
+          'Request, trace, execution and job identifiers for observability',
+        ],
+      },
+    ],
+    stackDetail: [
+      { group: 'Frontend', items: ['React', 'TypeScript', 'Vite', 'Monaco Editor', 'Tailwind CSS'] },
+      { group: 'Gateway', items: ['Node.js', 'TypeScript', 'Fastify / Express', 'REST', 'WebSocket / Socket.IO'] },
+      { group: 'Execution', items: ['Python', 'FastAPI', 'gRPC', 'C++', 'Docker'] },
+      { group: 'Data & infrastructure', items: ['PostgreSQL', 'Redis', 'Nginx', 'Docker Compose', 'Protocol Buffers'] },
+    ],
+    docs: 'The repository includes product requirements, architecture, data model, API reference, development guide, security model, testing strategy, gap analysis and ADRs.',
+    notes: 'The repository describes the platform as in development and positions the current architecture as an implementation-ready portfolio project rather than a production-hosted coding service.',
   },
+
+  'distributed-media-analytics-platform': {
+    tagline: 'A polyglot media pipeline that separates the control plane from heavy processing workers.',
+    overview: [
+      'This platform is designed around a simple distributed-systems constraint: large media workloads should not block or destabilize the API layer. React and Node.js handle the control plane while C++/FFmpeg and Python workers perform the expensive processing and analytics.',
+      'Media moves through an asynchronous pipeline from upload and registration to object storage, Redis job dispatch, native C++ processing, generated artifacts and Python analytics. PostgreSQL remains the durable source of metadata and job state, while object storage holds large binaries and generated media.',
+      'The architecture is built for recoverability and independent scaling. Jobs have attempts, leases, retries, backoff, cancellation and idempotency, while workers are intended to be disposable, observable and resource-limited.',
+    ],
+    features: [
+      {
+        title: 'Media processing',
+        items: [
+          'Media probing, stream discovery, decoding and metadata extraction',
+          'Thumbnail, clip and audio generation through native FFmpeg libraries',
+          'Audio resampling, downmixing and frame processing',
+          'Processing manifests connecting C++ artifacts with downstream analytics',
+        ],
+      },
+      {
+        title: 'AI & analytics',
+        items: [
+          'Speech transcription and transcript segmentation',
+          'Scene, object and face analysis',
+          'Sentiment and image recognition workflows',
+          'AI-generated insights with normalized processing results',
+        ],
+      },
+      {
+        title: 'Distributed platform',
+        items: [
+          'Asynchronous Redis job queue with PostgreSQL as durable state',
+          'Object storage for original media, clips, thumbnails and artifacts',
+          'Real-time progress through WebSocket events',
+          'Worker heartbeats, leases, retries, backoff and failure recovery',
+        ],
+      },
+    ],
+    stackDetail: [
+      { group: 'Frontend', items: ['React', 'TypeScript'] },
+      { group: 'Control plane', items: ['Node.js', 'TypeScript', 'PostgreSQL', 'Redis', 'WebSocket'] },
+      { group: 'Media & analytics', items: ['C++17', 'FFmpeg', 'Python', 'AI/ML tooling'] },
+      { group: 'Infrastructure', items: ['Docker', 'Docker Compose', 'S3-compatible Object Storage'] },
+      { group: 'Testing', items: ['GoogleTest', 'pytest', 'Vitest', 'Playwright', 'k6'] },
+    ],
+    docs: 'The repository includes architecture, data model, API, security, testing, roadmap and ADR documentation covering FFmpeg integration, Redis queues, object storage, PostgreSQL and worker isolation.',
+    notes: 'The README describes the implementation as actively in development and explicitly distinguishes the architecture and engineering targets from production readiness.',
+  },
+
+  'trao-ai-interview-prep-kit': {
+    tagline: 'An AI interview-preparation workflow built around deterministic output and editable state.',
+    overview: [
+      'Trao turns a company URL and job description into a structured interview-preparation kit. The workflow combines retrieval, AI generation, schema validation and deterministic planning so the result is more than a single generated answer.',
+      'The Builder is designed around preserving user work: candidates can edit, reorder and pin material, then regenerate individual categories without losing those edits. The kit is also checked for requirement coverage, with second-pass generation triggered when gaps remain.',
+      'The project includes a mandatory batch evaluation entry point as well as the web application. Its security layer treats crawled content as untrusted data and includes SSRF protections, payload limits and prompt-injection quarantine around scraped pages.',
+    ],
+    features: [
+      {
+        title: 'Interview kit generation',
+        items: [
+          'Company and job-description research feeding a structured preparation kit',
+          'Strict Zod validation against the project schema',
+          'Requirement coverage analysis with second-pass triggers',
+          'Arithmetic study schedules across 1, 5, 14 and 60-day plans',
+        ],
+      },
+      {
+        title: 'Builder & practice',
+        items: [
+          'Inline editing and reordering of generated categories',
+          'Pin/unpin controls with edit-preserving category regeneration',
+          'Flashcard Practice Mode with confidence tracking and adaptive queue',
+          'Readiness diagnostic with one-click cheat-sheet support',
+        ],
+      },
+      {
+        title: 'Security & evaluation',
+        items: [
+          'Production SSRF protection for loopback, private and cloud-metadata ranges',
+          'robots.txt-aware crawling with bounded page payloads and context truncation',
+          'Crawled HTML isolated as untrusted data to reduce prompt-injection risk',
+          'CLI batch evaluator: npm run evaluate -- --input <cases.json> --output <kits.json>',
+        ],
+      },
+    ],
+    stackDetail: [
+      { group: 'Frontend', items: ['Next.js 16', 'React 18', 'TypeScript', 'Tailwind CSS'] },
+      { group: 'Backend', items: ['Node.js', 'Express', 'TypeScript', 'JWT', 'Zod'] },
+      { group: 'Data & AI', items: ['MongoDB', 'Mongoose', 'Google Generative AI'] },
+      { group: 'Retrieval & tooling', items: ['Cheerio', 'robots-parser', 'Commander', 'tsx', 'Vitest'] },
+    ],
+    docs: 'The README documents the assessment requirements, architecture and pipeline, state-preserving Builder design, retrieval approach, resilience matrix, security safeguards and submission checklist.',
+    notes: 'The repository is an assessment-oriented full-stack application with shared types across client and server and a deterministic batch-evaluation entry point.',
+  },
+
+  'cloud-based-algorithmic-trading-engine': {
+    tagline: 'A polyglot trading simulation connecting a C++ matching engine to real-time analytics and visualization.',
+    overview: [
+      'The Trading Engine models an end-to-end exchange-style simulation without connecting to real markets. A C++ engine owns order validation, the order book, price-time-priority matching, partial fills and trade generation, while Python computes portfolio and risk analytics.',
+      'A Node.js gateway keeps browser clients away from the internal services. It exposes REST endpoints and a WebSocket stream for market ticks, trades, order-book changes, analytics and engine state, while the React dashboard turns those events into a live operational view.',
+      'The architecture is intentionally polyglot and measurable: services communicate through lightweight socket-based protocols, Docker Compose provides reproducible environments, and the project includes unit, integration and end-to-end testing plus observability and performance targets.',
+    ],
+    features: [
+      {
+        title: 'Trading engine',
+        items: [
+          'Market-data simulation and order creation/validation',
+          'Price-time-priority order-book matching',
+          'Partial fills and trade generation',
+          'Low-level network communication and engine lifecycle controls',
+        ],
+      },
+      {
+        title: 'Analytics & risk',
+        items: [
+          'VWAP, SMA and EMA indicators',
+          'PnL, exposure and drawdown calculations',
+          'Risk metrics and aggregated analytics events',
+          'Streaming analytics from the engine into the gateway',
+        ],
+      },
+      {
+        title: 'Gateway & dashboard',
+        items: [
+          'REST API for health, market, order-book, trades, analytics and engine controls',
+          'WebSocket events for market ticks, trades, order-book updates and analytics',
+          'React dashboard for charts, recent trades, portfolio metrics and controls',
+          'Dockerized multi-service development and deployment',
+        ],
+      },
+    ],
+    stackDetail: [
+      { group: 'Trading engine', items: ['C++17', 'CMake', 'Socket networking'] },
+      { group: 'Analytics', items: ['Python', 'VWAP', 'SMA', 'EMA', 'Risk analytics'] },
+      { group: 'Gateway', items: ['Node.js', 'TypeScript', 'REST', 'WebSocket'] },
+      { group: 'Dashboard & infrastructure', items: ['React', 'PostgreSQL', 'Docker', 'Docker Compose'] },
+    ],
+    docs: 'The repository includes ADRs covering the polyglot architecture, socket IPC, JSON wire format, WebSocket gateway, Docker Compose and future shared-memory optimization.',
+    notes: 'This is a simulation, not a real trading system: market data is simulated and there is no real exchange connectivity, real order execution or real-money trading.',
+  },
+
 }
