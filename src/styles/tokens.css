@@ -32,19 +32,11 @@ body {
   min-height: 100vh;
   background-color: var(--bg);
   background-image:
-    radial-gradient(circle at 8% 8%, rgba(57, 211, 83, 0.14) 0, rgba(57, 211, 83, 0.055) 18%, transparent 38%),
-    radial-gradient(circle at 92% 18%, rgba(126, 231, 135, 0.10) 0, rgba(57, 211, 83, 0.035) 16%, transparent 34%),
-    radial-gradient(circle at 50% 48%, rgba(57, 211, 83, 0.055) 0, transparent 30%),
-    radial-gradient(circle at 12% 88%, rgba(57, 211, 83, 0.075) 0, transparent 30%),
-    linear-gradient(rgba(57, 211, 83, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(57, 211, 83, 0.035) 1px, transparent 1px);
-  background-size:
-    auto,
-    auto,
-    auto,
-    auto,
-    44px 44px,
-    44px 44px;
+    radial-gradient(900px 600px at 8% 0%, rgba(57, 211, 83, 0.18), transparent 68%),
+    radial-gradient(800px 520px at 92% 12%, rgba(126, 231, 135, 0.13), transparent 66%),
+    radial-gradient(1000px 650px at 50% 55%, rgba(57, 211, 83, 0.07), transparent 72%),
+    radial-gradient(800px 520px at 5% 100%, rgba(46, 160, 67, 0.13), transparent 68%),
+    linear-gradient(135deg, #0D1117 0%, #0E1712 38%, #0D1117 70%, #101A14 100%);
   background-attachment: fixed;
   color: var(--text);
   font-family: var(--font-body);
@@ -57,10 +49,10 @@ body::after {
   inset: 0;
   pointer-events: none;
   z-index: 10;
-  opacity: 0.22;
+  opacity: 0.16;
   background-image:
-    radial-gradient(circle at 20% 30%, rgba(57, 211, 83, 0.18) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 70% 70%, rgba(126, 231, 135, 0.14) 0 1px, transparent 1.5px);
+    radial-gradient(circle at 20% 30%, rgba(57, 211, 83, 0.22) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 70% 70%, rgba(126, 231, 135, 0.16) 0 1px, transparent 1.5px);
   background-size: 72px 72px, 96px 96px;
   mix-blend-mode: screen;
 }
