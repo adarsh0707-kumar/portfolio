@@ -106,7 +106,7 @@ export default function Hero() {
               <div className="hero-photo-fallback" role="img" aria-label="Adarsh Kumar">AK</div>
             ) : (
               <img
-                src="/profile.png"
+                src="https://raw.githubusercontent.com/adarsh0707-kumar/adarsh0707-kumar/main/profile/Adarsh.png"
                 alt="Adarsh Kumar"
                 onError={() => setPhotoFailed(true)}
               />
