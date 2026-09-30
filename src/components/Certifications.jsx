@@ -37,12 +37,13 @@ const CERTS = [
     linkedinUrl: LINKEDIN_CERTS,
   },
   {
-    name: 'Simplilearn SkillUp Certificate',
+    name: 'ReactJS for Beginners',
     issuer: 'Simplilearn SkillUp',
     issued: '28 Sep 2026',
     credentialId: '10801205',
     verifyUrl: 'https://certificates.simplicdn.net/share/10801205_11154348_1790598004800.pdf',
-    skills: ['SkillUp Certification'],
+    skills: ['ReactJS', 'Frontend Development', 'JavaScript'],
+    image: '/certificates/ReactJS for Beginners.png',
     linkedinUrl: LINKEDIN_CERTS,
   },
   {
