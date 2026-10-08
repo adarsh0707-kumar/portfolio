@@ -1,4 +1,4 @@
-.projects-sub { color:var(--text-muted); font-size:.95rem; line-height:1.65; max-width:52ch; margin:14px auto 0; }
+.projects-sub { color:var(--text-muted); font-size:.95rem; line-height:1.65; max-width:52ch; margin:14px 0 0; text-align:left; }
 .filter-row { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-bottom:36px; }
 .filter-btn { display:inline-flex; align-items:center; gap:8px; font-family:inherit; font-size:.85rem; color:var(--text-muted); background:rgba(22,27,34,.65); border:1px solid var(--border); border-radius:999px; padding:8px 16px; cursor:pointer; transition:all .2s ease; backdrop-filter:blur(8px); }
 .filter-btn:hover { color:var(--text); border-color:rgba(57,211,83,.55); transform:translateY(-2px); }
