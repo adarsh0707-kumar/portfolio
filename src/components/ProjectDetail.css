@@ -312,3 +312,11 @@
   .pd-feedback { padding: 26px; }
   .pd-section { padding: 32px 0; }
 }
+
+
+.project-detail{position:relative}
+.pd-head,.pd-section{border-color:var(--border)}
+.pd-feature-group,.pd-cred,.pd-feedback{background:var(--surface);border-color:var(--border);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur))}
+.pd-feature-group,.pd-feedback{box-shadow:inset 0 1px 0 rgba(255,255,255,.035)}
+.pd-category{--accent:var(--tint,var(--accent))}
+.pd-cred code{background:rgba(0,0,0,.28)}
