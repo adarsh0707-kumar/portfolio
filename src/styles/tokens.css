@@ -80,3 +80,54 @@ h1,h2,h3,h4 { font-family:var(--font-display);font-weight:600;margin:0;letter-sp
 @media (max-width:720px){section{padding:72px 0}.section-head{margin-bottom:34px}.container{padding:0 18px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}body::after{animation:none}}
 :focus-visible{outline:2px solid var(--accent-bright);outline-offset:3px}
+
+
+/* Theme-matched custom scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) rgba(255, 255, 255, 0.045);
+}
+
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.035);
+  border-left: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--accent-bright) 0%,
+    var(--accent) 55%,
+    #9f4100 100%
+  );
+  border: 2px solid var(--bg);
+  border-radius: 999px;
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-bright);
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+
+html::-webkit-scrollbar-corner {
+  background: var(--bg);
+}
+
+@media (max-width: 720px) {
+  html {
+    scrollbar-width: auto;
+  }
+
+  html::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  html::-webkit-scrollbar-thumb {
+    border-width: 1px;
+  }
+}
