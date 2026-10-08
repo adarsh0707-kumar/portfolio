@@ -150,3 +150,12 @@
 @media (max-width: 600px) {
   .skill-grid { grid-template-columns: 1fr; }
 }
+
+
+.skills{background:rgba(255,255,255,.018);border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04)}
+.skill-row{padding:13px 15px;border:1px solid transparent;border-radius:14px;background:rgba(255,255,255,.018);transition:transform 250ms ease,border-color 250ms ease,background 250ms ease}
+.skill-row:hover{transform:translateY(-2px);border-color:var(--border);background:rgba(255,255,255,.04)}
+.skill-badge{background:rgba(255,255,255,.045);border-color:var(--border)}
+.skill-bar{background:rgba(255,255,255,.07)}
+.skill-bar-fill{background:linear-gradient(90deg,var(--accent),var(--accent-bright));box-shadow:0 0 14px var(--accent-glow)}
+.skill-row:hover .skill-pct{color:var(--accent-bright)}
