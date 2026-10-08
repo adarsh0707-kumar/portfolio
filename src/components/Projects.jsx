@@ -10,7 +10,8 @@ export default function Projects() {
   const [expanded, setExpanded] = useState(false)
 
   const filtered = useMemo(
-    () => (filter === 'All' ? PROJECTS : PROJECTS.filter((p) => p.category === filter)),
+    () => (filter === 'All' ? PROJECTS : PROJECTS.filter((p) => p.category === filter))
+      .sort((a, b) => Number(b.featured) - Number(a.featured)),
     [filter]
   )
 
