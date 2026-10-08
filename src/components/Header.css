@@ -16,3 +16,11 @@
 .hire-btn { display:inline-flex; align-items:center; gap:6px; font-size:.86rem; font-weight:500; background:var(--accent); color:#fff; padding:9px 18px; border-radius:var(--radius-sm); box-shadow:0 6px 18px -6px var(--accent-glow); transition:background .2s ease,transform .16s ease,box-shadow .2s ease; }
 .hire-btn:hover { background:#2EA043; transform:translateY(-2px); box-shadow:0 10px 24px -8px var(--accent-glow); }
 @media (max-width:860px) { .nav-links { display:none; } }
+
+/* Dark technical glass navigation */
+.site-header{background:rgba(8,8,9,.68);border-bottom:1px solid var(--border);box-shadow:0 12px 40px -28px rgba(204,85,0,.35);-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px)}
+.logo-mark{color:var(--accent-bright);text-shadow:0 0 18px var(--accent-glow)}
+.nav-links a::after{background:var(--accent);box-shadow:0 0 12px var(--accent-glow)}
+.nav-links a:hover{color:var(--text);text-shadow:0 0 18px rgba(255,122,47,.18)}
+.hire-btn{background:var(--accent);box-shadow:0 8px 24px -10px var(--accent-glow);border:1px solid rgba(255,255,255,.1)}
+.hire-btn:hover{background:var(--accent-bright);box-shadow:0 12px 28px -10px var(--accent-glow)}
