@@ -85,7 +85,7 @@ h1,h2,h3,h4 { font-family:var(--font-display);font-weight:600;margin:0;letter-sp
 /* Theme-matched custom scrollbar */
 html {
   scrollbar-width: thin;
-  scrollbar-color: var(--accent) rgba(255, 255, 255, 0.045);
+  scrollbar-color: var(--accent) var(--bg);
 }
 
 html::-webkit-scrollbar {
@@ -93,8 +93,8 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.035);
-  border-left: 1px solid rgba(255, 255, 255, 0.055);
+  background: var(--bg);
+  border-left: 1px solid var(--bg);
 }
 
 html::-webkit-scrollbar-thumb {
