@@ -58,7 +58,7 @@ export default function Projects() {
         <div className="project-grid">
           {visible.map((p, i) => (
             <article
-              className="project-card"
+              className={`project-card ${p.featured ? 'project-card--featured' : ''}`}
               key={p.name}
               style={{ '--tint': TINTS[p.category] }}
             >
