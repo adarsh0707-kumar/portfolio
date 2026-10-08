@@ -3,8 +3,8 @@ import './About.css'
 const STATS = [
   { value: '10+', label: 'Projects Built', icon: 'code' },
   { value: '3 mo', label: 'Internship Experience', icon: 'calendar' },
-  { value: '8', label: 'Certifications', icon: 'award' },
-  { value: '629', label: 'Unit Tests Written', icon: 'check' },
+  { value: '8+', label: 'Certifications', icon: 'award' },
+  { value: '629+', label: 'Unit Tests Written', icon: 'check' },
 ]
 
 const TIMELINE = [
