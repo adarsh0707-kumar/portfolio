@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import Certifications from './Certifications'
 import './Skills.css'
 
@@ -18,23 +17,13 @@ const SKILLS = [
 ]
 
 export default function Skills() {
-  const [cycle, setCycle] = useState(0)
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setCycle((value) => value + 1)
-    }, 12000)
-
-    return () => window.clearInterval(timer)
-  }, [])
-
   return (
     <section id="skills" className="skills">
       <div className="container">
         <div className="section-head">
           <p className="eyebrow">My Skills</p>
           <h2 className="section-title">Technologies I work with</h2>
-          <p className="skills-cycle" key={cycle}>Skills refresh automatically every 12 seconds</p>
+          <p className="skills-cycle">Building close to the metal, designing reliable backend systems, and connecting distributed services with data.</p>
         </div>
 
         <div className="skill-grid">
@@ -48,7 +37,6 @@ export default function Skills() {
                 </div>
                 <div className="skill-bar" aria-label={`${s.name} proficiency ${s.level}%`}>
                   <div
-                    key={cycle}
                     className="skill-bar-fill"
                     style={{ '--skill-level': `${s.level}%`, '--skill-color': s.color }}
                   />
