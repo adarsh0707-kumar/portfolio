@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import './Hero.css'
 
-const ROLES = ['build things for the web.', 'turn data into dashboards.', 'write code close to the metal.']
+const ROLES = ['build systems from the socket layer up.', 'design distributed data flows.', 'write code close to the metal.']
 
 const TECH = [
   { label: 'HTML', color: '#E34F26' },
@@ -46,7 +46,7 @@ export default function Hero() {
     <section id="top" className="hero">
       <div className="container hero-grid">
         <div className="hero-copy">
-          <p className="hero-pill">I'M A WEB DEVELOPER</p>
+          <p className="hero-pill">SYSTEMS · BACKEND · DISTRIBUTED SOFTWARE</p>
 
           <h1 className="hero-name">
             Hi, I'm <span className="accent">Adarsh</span>
@@ -57,9 +57,9 @@ export default function Hero() {
           </p>
 
           <p className="hero-desc">
-            Final-year CS engineering student building data-driven web
-            applications — from IPC and multithreading in C/C++ to PERN-stack
-            apps and interactive dashboards in Tableau and Power BI.
+            Computer Science engineer focused on backend systems, distributed software,
+            networking, and data-driven applications — from IPC and multithreading
+            in C/C++ to APIs, real-time systems, and analytical dashboards.
           </p>
 
           <div className="hero-actions">
