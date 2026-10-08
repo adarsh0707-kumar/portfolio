@@ -95,3 +95,10 @@
   .contact-grid { grid-template-columns: 1fr; }
   .contact-cta, .contact-panel { padding: 28px; }
 }
+
+
+.contact{background:rgba(255,255,255,.018);border-top:1px solid rgba(255,255,255,.04)}
+.contact-cta,.contact-panel{background:var(--surface);border-color:var(--border);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));box-shadow:inset 0 1px 0 rgba(255,255,255,.035)}
+.channel-row:hover{background:rgba(255,255,255,.055)}
+.channel-icon{background:var(--accent-dim);color:var(--accent-bright)}
+.channel-row:hover .channel-value{color:var(--accent-bright)}
