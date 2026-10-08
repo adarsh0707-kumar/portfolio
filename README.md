@@ -1,76 +1,252 @@
 # Adarsh Kumar — Portfolio
 
-A React (Vite) portfolio site — dark theme, four sections (About, Skills,
-Projects, Contact).
+Personal developer portfolio built with **React 18, Vite, and React Router**.
 
-## Run it in VS Code
+The site is designed to present my work around **backend engineering, systems programming, distributed applications, and full-stack development**, with projects, skills, certifications, and contact information in one place.
 
-1. Unzip this folder and open it in VS Code.
-2. Open a terminal (``Ctrl + ` ``) and run:
+**Live site:** https://portfolio-orpin-zeta-77.vercel.app
 
-   ```bash
-   npm install
-   npm run dev
-   ```
+## What the site includes
 
-3. Open the local URL it prints (usually <http://localhost:5173>).
+- Responsive single-page portfolio
+- Hero, About, Skills, Projects, Certifications, and Contact sections
+- Project filtering by category
+- Project detail routes at `/projects/:slug`
+- GitHub repository links for projects
+- Live demo links where a working deployment is available
+- Certificate cards with image lightbox and verification links
+- Responsive navigation and scroll handling
+- Reduced-motion/accessibility considerations in the UI
+- Static project metadata maintained in the repository
 
-## Files you still need to add to `public/`
+### Project categories
 
-The site references three files that aren't in the repo yet. Each one
-degrades gracefully, but add them before you publish:
+- **Full-Stack**
+- **Systems & C++**
+- **Data & AI**
+- **Frontend**
 
-| File | Used by | If missing |
-| --- | --- | --- |
-| `public/profile.png` | Hero photo | Falls back to an "AK" monogram |
-| `public/Adarsh_Kumar_Resume.pdf` | "Download CV ↓" button in the hero | Button 404s |
-| `public/certificates/skillcourse-power-bi.png` | Power BI certification card | Card link 404s |
+The portfolio currently presents projects ranging from C/C++ networking and database work to distributed systems, full-stack applications, and machine-learning projects.
 
-**About the photo.** Use the plain formal headshot (dark shirt, white
-background) — it's the only one of the three that's framed tightly enough for
-a circular crop. The hero clips it into a circle sitting on a violet gradient
-disc, so:
+## Featured work
 
-- If the PNG has a **transparent** background, you get the cutout look from
-  the reference design — head and shoulders floating on the violet disc.
-- If it still has a **white** background, you get a white circle instead.
-  It works, but the cutout looks much better. Run it through remove.bg (or
-  any background remover) and save the result as `profile.png`.
+The portfolio's featured section is intentionally centered on projects that best represent the engineering direction of the portfolio:
 
-## Before you publish
+| Project | Focus |
+|---|---|
+| Trading Engine | C++ systems, sockets, analytics, WebSockets, Docker |
+| Distributed Media Analytics Platform | Distributed processing, FFmpeg, C++, Python |
+| CodeForge Cloud | Distributed code execution architecture, React, Node.js, Python, C++, Docker |
+| Medical Billing | Full-stack application, PostgreSQL, Prisma, RBAC |
+| Database Engine | C++ database internals and persistence |
+| Chat App | POSIX sockets and multithreaded networking |
 
-- **Project data** lives in `src/data/projects.js`, pulled from the GitHub
-  API. Repos with no GitHub description got a summary derived from their
-  README, name, and language — worth rewriting in your own words. Forks
-  (`metabase`), the profile-config repo, and the portfolio repos are excluded.
-- **Dead demos**: `Movie-Recommender-AI-ML` and `my-react-app` both had Vercel
-  URLs that now return 404, so their Live Demo links are commented out in the
-  data file. Redeploy them and uncomment.
-- **More certificates**: add an entry to the `CERTS` array in
-  `src/components/Certifications.jsx`. A card becomes clickable only when it
-  has a `file` key pointing at something in `public/certificates/` — leave
-  `file` off and it renders as a plain, non-clickable card.
+The project catalogue also contains smaller learning projects and earlier frontend/full-stack work. Those are kept available for breadth without being presented as equivalent to the flagship systems projects.
 
-## Deploying
+## Tech stack
 
-Deployed on Vercel at <https://portfolio-orpin-zeta-77.vercel.app>, which
-rebuilds automatically on every push to `main`. Netlify works the same way —
-both auto-detect the Vite build (`npm run build`, output folder `dist`).
+### Application
+
+- React 18.3
+- React DOM
+- React Router 7
+- Vite 8
+- JavaScript / JSX
+
+### UI
+
+- Custom CSS
+- Responsive layouts
+- CSS design tokens
+- Component-based sections
+- Lightbox for certificate previews
+
+### Deployment
+
+- Vercel
+- Vite production build
+
+## Project structure
+
+```text
+portfolio/
+├── public/
+│   ├── certificates/
+│   ├── Adarsh_Kumar_Resume.pdf
+│   └── profile.png
+├── src/
+│   ├── components/
+│   │   ├── About.jsx
+│   │   ├── Certifications.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Hero.jsx
+│   │   ├── Projects.jsx
+│   │   ├── ProjectDetail.jsx
+│   │   └── ...
+│   ├── data/
+│   │   └── projects.js
+│   ├── styles/
+│   ├── App.jsx
+│   └── main.jsx
+├── index.html
+├── package.json
+└── vite.config.js
+```
+
+## Local development
+
+Requirements:
+
+- Node.js
+- npm
+
+Clone the repository:
+
+```bash
+git clone https://github.com/adarsh0707-kumar/portfolio.git
+cd portfolio
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open the local Vite URL, normally:
+
+```text
+http://localhost:5173
+```
+
+## Production build
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+There is currently no dedicated automated test suite in the repository. The primary verification path is the production build plus manual browser/accessibility checks.
+
+## Content and assets
+
+Project metadata is maintained in:
+
+```text
+src/data/projects.js
+```
+
+Adding or changing a project should update its:
+
+- Name
+- Category
+- Description
+- Year
+- Technology stack
+- GitHub repository
+- Live demo, when one actually exists
+- Featured status, when appropriate
+
+### Personal assets
+
+The site can use:
+
+- `public/profile.png` for the hero image
+- `public/Adarsh_Kumar_Resume.pdf` for the resume download
+- `public/certificates/*` for certificate images
+
+These are personal portfolio assets rather than reusable application code.
+
+Certificate metadata is maintained in:
+
+```text
+src/components/Certifications.jsx
+```
+
+Only certificates with an available image can currently be opened in the built-in lightbox. Verification links are included where available.
+
+## Deployment
+
+The portfolio is deployed on Vercel and is configured as a standard Vite application.
+
+Typical Vercel build settings:
+
+```text
+Build command: npm run build
+Output directory: dist
+```
+
+The repository does not require a backend or database.
+
+## Design and engineering goals
+
+The portfolio is intentionally more than a project list. Its purpose is to make the engineering progression easy to understand:
+
+```text
+C / C++ fundamentals
+        │
+        ▼
+Sockets, concurrency, database internals
+        │
+        ▼
+Backend and full-stack applications
+        │
+        ▼
+Distributed systems and service architecture
+        │
+        ▼
+Production-oriented engineering
+```
+
+The site itself stays lightweight: the frontend is a static Vite build, while project and certificate information is represented as local data and assets.
+
+## Current limitations
+
+- No backend or server-side content management
+- Project metadata is maintained manually in `src/data/projects.js`
+- No automated unit/E2E test suite
+- No CMS or admin interface
+- Live-demo availability depends on the deployment of each individual project
+- Some older/learning projects are intentionally less detailed than flagship projects
+- Portfolio content can become stale if project status, links, or deployments change
+
+## Roadmap
+
+- Improve Lighthouse performance and Core Web Vitals
+- Add automated accessibility checks
+- Add automated link/deployment validation
+- Improve project case-study pages with architecture, implementation, and results
+- Add concise engineering write-ups for flagship projects
+- Keep project status and live-demo links synchronized with the actual repositories
+- Refine mobile and reduced-motion UX
 
 ## Contributing
 
-Bug reports, accessibility findings, typos, and dead links are all welcome —
-see [CONTRIBUTING.md](CONTRIBUTING.md) for how to run the project and what
-kinds of change make sense here. Participation is governed by the
-[Code of Conduct](CODE_OF_CONDUCT.md). For anything security related, follow
-the [Security Policy](SECURITY.md) rather than opening a public issue.
+This is a personal portfolio, but useful fixes are welcome, especially:
+
+- Accessibility issues
+- Broken links
+- Build failures
+- Typos
+- Clear documentation improvements
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidance. For security-related concerns, use [SECURITY.md](SECURITY.md).
 
 ## License
 
-The **source code** is released under the [MIT License](LICENSE) — take it,
-fork it, use it as the basis for your own site.
+The **source code** is released under the [MIT License](LICENSE).
 
-The **personal content is not covered by that license.** That means the photo
-(`public/profile.png`), the résumé, everything in `public/certificates/`, and
-the biographical copy throughout the site. Those are mine. If you reuse this
-project as a template, replace all of it with your own.
+Personal content is not covered by that license. This includes the profile photo, resume, certificate images, and personal/biographical copy. If you reuse the source as a template, replace those assets and personal details with your own.
