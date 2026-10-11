@@ -47,6 +47,16 @@ const CERTS = [
     linkedinUrl: LINKEDIN_CERTS,
   },
   {
+    name: 'JavaScript',
+    issuer: 'Simplilearn SkillUp',
+    issued: '11 Oct 2026',
+    credentialId: '10872400',
+    verifyUrl: 'https://certificates.simplicdn.net/share/10872400_11154348_1791721353919.pdf',
+    skills: ['JavaScript', 'Programming Fundamentals', 'Web Development'],
+    image: '/certificates/JavaScript.png',
+    linkedinUrl: LINKEDIN_CERTS,
+  },
+  {
     name: '30 Days Power BI Micro Course',
     issuer: 'SkillCourse',
     issued: '01 Jul 2026',
